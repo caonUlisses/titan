@@ -9,7 +9,9 @@ const EventResolver = {
     },
     event: async (_id) => {
       try {
-        return await Event.findById(_id)
+        const event = await Event.findById(_id)
+        if (!event) { throw new Error('Evento não encontrado') }
+        return event
       } catch (error) { throw new Error(error) }
     }
   },
