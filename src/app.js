@@ -13,8 +13,7 @@ const PORT = config.server.port
 const app = express()
 
 app.use(logger)
-app.use('/events/graphiql', graphiqlExpress({ endpointURL: '/events/graphql' }))
-app.use('/events/graphql', bodyParser.json(), graphqlExpress({ schema: EventSchema }))
+app.use('/events/', bodyParser.json(), graphqlExpress({ schema: EventSchema }))
 
 app.listen(PORT, () => {
   console.log(chalk.green('Server running on port', chalk.white(PORT)))
