@@ -1,6 +1,6 @@
-import morgan from 'morgan'
-import rfs from 'rotating-file-stream'
-import fs from 'fs'
+const morgan = require('morgan')
+const rfs = require('rotating-file-stream')
+const fs = require('fs')
 
 const logDirectory = __dirname
 fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory)
@@ -12,4 +12,4 @@ const stream = rfs('access.log', {
 
 const logger = morgan('combined', { stream })
 
-export default logger
+module.exports = logger

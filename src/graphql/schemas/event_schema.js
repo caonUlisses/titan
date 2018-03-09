@@ -1,5 +1,5 @@
-import { makeExecutableSchema } from 'graphql-tools'
-import EventResolver from './../resolvers/event-resolver.js'
+const { makeExecutableSchema } = require('graphql-tools')
+const EventResolver = require('./../resolvers/event-resolver.js')
 
 const typeDefs = `
   type Event {
@@ -24,4 +24,4 @@ const typeDefs = `
 
 const EventSchema = makeExecutableSchema({ typeDefs, resolvers: EventResolver })
 
-export default EventSchema
+module.exports = EventSchema

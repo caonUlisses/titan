@@ -1,13 +1,13 @@
-import {} from 'dotenv/config'
-import { graphqlExpress, graphiqlExpress } from 'apollo-server-express'
-import bodyParser from 'body-parser'
-import chalk from 'chalk'
-import express from 'express'
-import config from './config/master.js'
-import logger from './logs/logger.js'
-import EventSchema from './graphql/schemas/event_schema.js'
+require('dotenv').config()
+const { graphqlExpress } = require('apollo-server-express')
+const bodyParser = require('body-parser')
+const chalk = require('chalk')
+const express = require('express')
+const config = require('./config/master.js')
+const logger = require('./logs/logger.js')
+const EventSchema = require('./graphql/schemas/event_schema.js')
 
-import './db/mongoose.js'
+require('./db/mongoose.js')
 
 const PORT = config.server.port
 const app = express()

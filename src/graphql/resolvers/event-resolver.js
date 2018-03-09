@@ -1,4 +1,4 @@
-import Event from './../../models/Event.js'
+const Event = require('./../../models/Event.js')
 
 const EventResolver = {
   Query: {
@@ -34,4 +34,4 @@ const EventResolver = {
   }
 }
 
-export default EventResolver
+module.exports = EventResolver

@@ -6,8 +6,8 @@
   "author": "Ulisses Caon",
   "license": "MIT",
   "scripts": {
-    "build": "babel src --out-dir out",
-    "watch": "babel-watch src/app.js",
+    "watch": "nodemon src/app.js",
+    "debug": "node src/app.js --inspect",
     "test": "mocha src/test/"
   },
   "dependencies": {

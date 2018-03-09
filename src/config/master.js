@@ -1,6 +1,6 @@
 const env = process.env
 
-export default {
+module.exports = {
   app: {
     name: 'Titan'
   },
